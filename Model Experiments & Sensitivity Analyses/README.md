@@ -3,12 +3,10 @@
 Version 5 of the MeloMatch-AI classifier: one main experiment and two sensitivity analyses that each change a single design decision to test how robust the result is.
 
 | Notebook | What changes |
-|---|---|---|
-| [`MeloMatch_V5_BPM_+_Oversampler.ipynb`](MeloMatch_V5_BPM_+_Oversampler.ipynb) | **Main experiment.** All features incl. BPM, random oversampling, 5 candidate models | 
+|---|---|
+| [`MeloMatch_V5_BPM_+_Oversampler.ipynb`](MeloMatch_V5_BPM_+_Oversampler.ipynb) | **Main experiment.** All features including BPM, random oversampling, 5 candidate models |
 | [`Sensitivity_Analysis_MeloMatch_V5_w_o_BPM.ipynb`](Sensitivity_Analysis_MeloMatch_V5_w_o_BPM.ipynb) | BPM removed from every feature set |
 | [`Sensitivity_Analysis_MeloMatch_V5_Class_weighted_ExtraTrees_.ipynb`](Sensitivity_Analysis_MeloMatch_V5_Class_weighted_ExtraTrees_.ipynb) | No oversampling; ExtraTrees with `class_weight='balanced'` only |
----
-
 ## Shared methodology
 
 All three notebooks follow a similar structure.
