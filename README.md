@@ -50,7 +50,7 @@ MeloMatch-AI/
 
 ## Running the notebooks
 
-### Option 1: Google Colab (easiest)
+### Option 1: Google Colab
 1. In Colab, go to File → Open notebook → GitHub, paste this repo's URL, and open a notebook from `ExtraTrees Model Experiments/`.
 2. Upload `Data/mxmh_survey_results.csv` using the Files panel on the left.
 3. In the first cell, comment out the Google Drive lines:
