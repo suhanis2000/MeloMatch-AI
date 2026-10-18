@@ -1,6 +1,6 @@
 # Model Experiments & Sensitivity Analyses
 
-Version 5 of the MeloMatch-AI classifier: one main experiment and two sensitivity analyses that each change a single design decision to test how robust the result is.
+Version 5 of the MeloMatch-AI classifier: one main experiment and two sensitivity analyses.
 
 | Notebook | What changes |
 |---|---|
@@ -36,7 +36,7 @@ All three notebooks follow a similar structure.
 
 **4. Split.** One stratified 80/20 split (`random_state=42`) shared by all feature sets: **588 train / 148 holdout**. The holdout is touched only once, at the end.
 
-**5. Model search.** `GridSearchCV` with `StratifiedKFold(5, shuffle=True, random_state=42)`, refitting on **macro F1** (balanced accuracy and accuracy also logged). Resampling sits inside an `imblearn` pipeline, so it happens only on training folds.
+**5. Model search.** `GridSearchCV` with `StratifiedKFold(5, shuffle=True, random_state=42)`, refitting on **macro F1** (balanced accuracy and accuracy also logged). Resampling is within an `imblearn` pipeline, so it occurs only on training folds.
 
 | Model | Grid |
 |---|---|
@@ -61,8 +61,6 @@ All three notebooks follow a similar structure.
 ## 2. Sensitivity: no BPM — `Sensitivity_Analysis_MeloMatch_V5_w_o_BPM.ipynb`
 
 **Why:** BPM has 107 missing values and extreme outliers (up to 999,999,999). This run removes it from Sets B and C (8 and 12 features).
-
-**Takeaway:** removing BPM doesn't hurt and slightly helps; the winning algorithm switches from ExtraTrees to Random Forest, with CatBoost essentially tied. In its raw form, BPM adds noise rather than signal.
 
 ---
 
