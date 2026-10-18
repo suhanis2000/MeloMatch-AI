@@ -1,4 +1,4 @@
-# ExtraTrees Model Experiments
+# Model Experiments & Sensitivity Analyses
 
 Version 5 of the MeloMatch-AI classifier: one main experiment and two sensitivity analyses that each change a single design decision to test how robust the result is.
 
