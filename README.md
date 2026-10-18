@@ -47,33 +47,38 @@ MeloMatch-AI/
 5. **Model selection** – SVC, Logistic Regression, CatBoost, ExtraTrees, and Random Forest are tuned with `GridSearchCV` (stratified 5-fold, optimizing macro F1) on an 80/20 stratified split (588 train / 148 holdout) and selected based on macro-F1 scores.
 6. **Analysis** – the winner is re-tuned on each feature set, scored once on the untouched holdout, compared to dummy baselines, and given bootstrap confidence intervals and an error analysis.
 
----
 
-## Getting started
+## Running the notebooks
 
-### Run in Google Colab (easiest)
+### Option 1: Google Colab (easiest)
+1. In Colab, go to File → Open notebook → GitHub, paste this repo's URL, and open a notebook from `ExtraTrees Model Experiments/`.
+2. Upload `Data/mxmh_survey_results.csv` using the Files panel on the left.
+3. In the first cell, comment out the Google Drive lines:
+```python
+   # from google.colab import drive
+   # drive.mount('/content/drive')
+```
+4. Change the `pd.read_csv(...)` path to:
+```python
+   pd.read_csv('/content/mxmh_survey_results.csv')
+```
+5. Keep the `!pip install catboost'
 
-Open a notebook from [`ExtraTrees Model Experiments/`](ExtraTrees%20Model%20Experiments/) in Colab, upload `Data/mxmh_survey_results.csv`, and change the `pd.read_csv(...)` path in the data-loading cell to wherever you put the file.
-
-> The notebooks currently load data from a personal Google Drive path (`/content/drive/MyDrive/...`). Update that line before running.
-
-### Run locally
-
+### Option 2: Run locally
 ```bash
-git clone https://github.com/sususuhaniS/MeloMatch-AI.git
+git clone https://github.com/suhanis2000/MeloMatch-AI.git
 cd MeloMatch-AI
-pip install pandas numpy scikit-learn imbalanced-learn catboost shap matplotlib seaborn jupyter
+pip install -r requirements.txt
 jupyter notebook
 ```
 
 Then, in each notebook:
-- remove or comment out `from google.colab import drive` and `drive.mount(...)`
-- change the CSV path to `../Data/mxmh_survey_results.csv`
-- delete the `!pip install catboost` line (already installed above)
+- Delete the `!pip install catboost` line.
+- Comment out `from google.colab import drive` and `drive.mount(...)`.
+- Change the CSV path to `../Data/mxmh_survey_results.csv`.
 
-The full five-model grid search takes several minutes on a laptop.
+NOTE: The full five-model grid search takes several minutes on a laptop.
 
----
 
 ## Data & acknowledgments
 
