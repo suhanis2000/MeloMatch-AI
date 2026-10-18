@@ -83,4 +83,4 @@ Built with scikit-learn, imbalanced-learn, CatBoost, pandas, matplotlib, and sea
 
 ## Author
 
-**Suhani Sharma** — [@sususuhaniS](https://github.com/sususuhaniS)
+**Suhani Sharma** — [@suhanis2000](https://github.com/suhanis2000)
